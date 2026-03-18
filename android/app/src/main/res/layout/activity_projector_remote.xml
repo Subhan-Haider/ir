@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:padding="16dp">
+
+    <!-- Header Section -->
+    <TextView
+        android:id="@+id/tvProjectorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Projector Control"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnPower"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#FF5252"
+        android:text="⏻"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Source & Inputs Section -->
+    <LinearLayout
+        android:id="@+id/llInputs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@id/tvProjectorTitle">
+
+        <Button
+            android:id="@+id/btnInputHDMI1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="#333333"
+            android:text="HDMI 1"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"/>
+            
+        <Button
+            android:id="@+id/btnInputHDMI2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="#333333"
+            android:text="HDMI 2"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/btnInputVGA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="#333333"
+            android:text="VGA"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/btnInputAV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#333333"
+            android:text="AV"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <!-- Keystone & Image Controls -->
+    <TextView
+        android:id="@+id/tvImageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Image Control"
+        android:textColor="#BBBBBB"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/llInputs"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnKeystoneUp"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#424242"
+        android:text="▲ K.S"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/tvImageTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnKeystoneLeft"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#424242"
+        android:text="◀ K.S"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="@id/btnKeystoneOK"
+        app:layout_constraintEnd_toStartOf="@id/btnKeystoneOK" />
+
+    <Button
+        android:id="@+id/btnKeystoneOK"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#2196F3"
+        android:text="OK"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/btnKeystoneUp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnKeystoneRight"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="#424242"
+        android:text="K.S ▶"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="@id/btnKeystoneOK"
+        app:layout_constraintStart_toEndOf="@id/btnKeystoneOK" />
+
+    <Button
+        android:id="@+id/btnKeystoneDown"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#424242"
+        android:text="▼ K.S"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/btnKeystoneOK"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Zoom & Focus Row -->
+    <LinearLayout
+        android:id="@+id/llZoomFocus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@id/btnKeystoneDown">
+
+        <Button
+            android:id="@+id/btnZoomIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="#555555"
+            android:text="Zoom +"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnZoomOut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#555555"
+            android:text="Zoom -"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnFocusPlus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="#555555"
+            android:text="Focus +"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnFocusMinus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#555555"
+            android:text="Focus -"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <!-- Smart Macro Row / Presentation Mode -->
+    <TextView
+        android:id="@+id/tvMacrosTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smart Macros"
+        android:textColor="#BBBBBB"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/llZoomFocus"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvMacrosTitle">
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnMacroPresentation"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#9C27B0"
+                android:text="📊 Presentation Mode\n(Power + HDMI1 + Eco)"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnMacroMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#E91E63"
+                android:text="🍿 Movie Mode\n(Power + HDMI2 + Cinema)"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnMacroPowerOff"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:backgroundTint="#FF9800"
+                android:text="⏳ Sleep Timer (30m)"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

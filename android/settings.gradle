@@ -1,0 +1,2 @@
+rootProject.name = "SmartHub AI"
+include ':app'

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:padding="16dp">
+
+    <!-- Header Section -->
+    <TextView
+        android:id="@+id/tvDebugTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Raw IR Analyzer"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDebugSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developer &amp; Power User Tools"
+        android:textColor="#FFCA28"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvDebugTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Mode Selector Tab -->
+    <RadioGroup
+        android:id="@+id/rgInputType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvDebugSubtitle">
+
+        <RadioButton
+            android:id="@+id/rbRawTimings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="RAW Timings"
+            android:textColor="#FFFFFF"
+            android:buttonTint="#2196F3"/>
+
+        <RadioButton
+            android:id="@+id/rbProntoHex"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pronto HEX"
+            android:textColor="#FFFFFF"
+            android:buttonTint="#FF9800"/>
+    </RadioGroup>
+
+    <!-- Frequency Input -->
+    <TextView
+        android:id="@+id/tvFreqTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frequency (Hz):"
+        android:textColor="#BBBBBB"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/rgInputType"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etFrequency"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="38000"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvFreqTitle"
+        app:layout_constraintStart_toEndOf="@id/tvFreqTitle"
+        android:layout_marginStart="8dp"/>
+
+    <!-- Code Input Field -->
+    <TextView
+        android:id="@+id/tvCodeInputTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Array Payload:"
+        android:textColor="#BBBBBB"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/etFrequency"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etIrCode"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:background="#1E1E1E"
+        android:gravity="top|start"
+        android:hint="e.g. 9000, 4500, 560, 560..."
+        android:inputType="textMultiLine"
+        android:padding="12dp"
+        android:textColor="#00E5FF"
+        android:textColorHint="#555555"
+        android:fontFamily="monospace"
+        app:layout_constraintTop_toBottomOf="@id/tvCodeInputTitle" />
+
+    <!-- Action Buttons -->
+    <Button
+        android:id="@+id/btnAnalyze"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#FF9800"
+        android:text="ANALYZE SIGNAL"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/etIrCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnTestIr" />
+
+    <Button
+        android:id="@+id/btnTestIr"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#4CAF50"
+        android:text="FIRE BLASTER"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/etIrCode"
+        app:layout_constraintStart_toEndOf="@id/btnAnalyze"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Output Terminal -->
+    <TextView
+        android:id="@+id/tvConsoleOutput"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:background="#000000"
+        android:padding="12dp"
+        android:text="> Debug Console Ready...\n> Hardware Interface Attached."
+        android:textColor="#00FF00"
+        android:fontFamily="monospace"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/btnTestIr"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,29 @@
+# Default ignored files
+/node_modules
+/backend/node_modules
+.env
+.DS_Store
+Thumbs.db
+*.swp
+
+# Android specific
+**/build/
+**/.gradle/
+**/local.properties
+**/.idea/
+**/.cxx/
+*.apk
+*.aab
+*.iml
+*.keystore
+
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# IDE
+/.vscode/
+.vscode/

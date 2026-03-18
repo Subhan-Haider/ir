@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.smarthub">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.TRANSMIT_IR" />
+    <uses-feature android:name="android.hardware.usb.host" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.autodetect.AutoDetectActivity" android:exported="false" />
+        <activity android:name=".ui.projector.ProjectorRemoteActivity" android:exported="false" />
+        <activity android:name=".ui.ac.AcRemoteActivity" android:exported="false" />
+        <activity android:name=".ui.tv.TvRemoteActivity" android:exported="false" />
+        <activity android:name=".ui.soundbar.SoundbarRemoteActivity" android:exported="false" />
+        <activity android:name=".ui.lights.LightsRemoteActivity" android:exported="false" />
+        <activity android:name=".ui.debug.DebugRemoteActivity" android:exported="false" />
+    </application>
+
+</manifest>

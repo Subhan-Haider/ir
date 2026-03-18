@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#121212">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smart Auto-Detect"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Target: "
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"/>
+        <Spinner
+            android:id="@+id/spinnerDeviceType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvBrandPriorities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top Brand: Samsung"
+        android:textColor="#FFC107"
+        android:textSize="14sp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvDeviceType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detecting TV..."
+        android:textColor="#BBBBBB"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="0"
+        android:layout_marginBottom="16dp"
+        android:progressTint="#4CAF50"/>
+
+    <TextView
+        android:id="@+id/tvProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Testing code 1 of X"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_marginBottom="40dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/btnTryNext"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="#333333"
+            android:textColor="#FFFFFF"
+            android:text="Next (+1)" />
+
+        <Button
+            android:id="@+id/btnFastForward"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF"
+            android:text="Skip (+5)" />
+
+        <Button
+            android:id="@+id/btnResponded"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:text="Worked!" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRetry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#FF5252"
+        android:textColor="#FFFFFF"
+        android:text="Retry Previous (-1)"
+        android:visibility="gone"/>
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+[
+  {
+    "type": "tv",
+    "brand": "samsung",
+    "commands": { "power": [9000, 4500, 560, 1690, 560, 560] }
+  },
+  {
+    "type": "tv",
+    "brand": "lg",
+    "commands": { "power": [9000, 4500, 560, 560, 560, 1690] }
+  },
+  {
+    "type": "tv",
+    "brand": "sony",
+    "commands": { "power": [4000, 4000, 500, 1500] }
+  },
+  {
+    "type": "tv",
+    "brand": "tcl",
+    "commands": { "power": [8000, 4000, 600, 600] }
+  },
+  {
+    "type": "tv",
+    "brand": "vizio",
+    "commands": { "power": [3000, 3000, 400, 1200] }
+  },
+  {
+    "type": "ac",
+    "brand": "daikin",
+    "commands": { "power": [4000, 1000, 200, 800] }
+  },
+  {
+    "type": "projector",
+    "brand": "epson",
+    "commands": { "power": [9000, 4500, 560, 560] }
+  }
+]

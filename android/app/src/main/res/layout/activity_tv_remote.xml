@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:padding="16dp">
+
+    <!-- Header Section -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TV Control"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnPower"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#FF5252"
+        android:text="⏻"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Source / Mute Row -->
+    <LinearLayout
+        android:id="@+id/llTopControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <Button
+            android:id="@+id/btnSource"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#333333"
+            android:text="INPUT"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#333333"
+            android:text="MENU"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnMute"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:backgroundTint="#333333"
+            android:text="MUTE 🔇"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <!-- Volume and Channel Controls -->
+    <LinearLayout
+        android:id="@+id/llVolCh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintTop_toBottomOf="@id/llTopControls">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnVolUp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:backgroundTint="#424242"
+                android:text="VOL +"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnVolDown"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#424242"
+                android:text="VOL -"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnChUp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:backgroundTint="#424242"
+                android:text="CH  ▲"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnChDown"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#424242"
+                android:text="CH  ▼"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- D-Pad Navigation -->
+    <Button
+        android:id="@+id/btnNavUp"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#424242"
+        android:text="▲"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/llVolCh"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnNavLeft"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#424242"
+        android:text="◀"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="@id/btnNavOK"
+        app:layout_constraintEnd_toStartOf="@id/btnNavOK" />
+
+    <Button
+        android:id="@+id/btnNavOK"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#2196F3"
+        android:text="OK"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/btnNavUp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnNavRight"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="#424242"
+        android:text="▶"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="@id/btnNavOK"
+        app:layout_constraintStart_toEndOf="@id/btnNavOK" />
+
+    <Button
+        android:id="@+id/btnNavDown"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#424242"
+        android:text="▼"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/btnNavOK"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Contextual Smart Macro Row for TV -->
+    <TextView
+        android:id="@+id/tvMacrosTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TV Smart Scenes"
+        android:textColor="#BBBBBB"
+        android:textSize="16sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/btnNavDown"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvMacrosTitle">
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnMacroGaming"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#673AB7"
+                android:text="🎮 Console Mode\n(Power + HDMI3 + Game)"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnMacroNews"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#009688"
+                android:text="📰 Morning News\n(Ch 5 + Vol 20 + Mute Delay)"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnMacroKids"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:backgroundTint="#E91E63"
+                android:text="🧒 Kids Tube\n(Smart Hub + Up + OK)"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
